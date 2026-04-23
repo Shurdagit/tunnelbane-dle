@@ -311,7 +311,7 @@
       text-align: center;
       font-size: 14px;
       color: #333; /* Lite mörkare för att synas bra över bilden */
-      margin-top: 10rem;
+      margin-top: 7rem;
       background: rgba(255,255,255,0.6);
       display: inline-block;
       padding: 8px 16px;
@@ -323,6 +323,25 @@
     .footer-container {
       text-align: center;
     }
+    .est-text {
+      position: fixed;
+      bottom: 5px;      /* Hur långt från botten den ska sitta */
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: #000000 !important; /* Tvingar texten att vara helt svart */
+      font-weight: bold !important; /* Gör texten fet */
+      font-size: 12px;
+      background: none !important;  /* INGEN RUTA! */
+      border: none !important;
+      z-index: 10001;               /* Lägger den överst av allt */
+      pointer-events: none;         /* Gör att man kan klicka "igenom" texten */
+}
+
+/* Eftersom vi lägger till text längst ner, se till att spelet har plats */
+body {
+  padding-bottom: 120px; 
+}
   </style>
 </head>
 <body>
@@ -643,5 +662,8 @@
 
     init();
   </script>
+  
+  <div class="est-text">Est. by Shurda.</div>
+  
 </body>
 </html>
