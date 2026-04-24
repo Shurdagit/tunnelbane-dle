@@ -515,8 +515,19 @@ body {
 
     function getDailyStation() {
       const now = new Date();
-      const seed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
-      return STATIONS[seed % STATIONS.length];
+  
+  // 1. Skapa grundfröet precis som innan (t.ex. 20260424)
+     const seed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+
+  // 2. Skapa "kaos" i siffran! 
+  // Math.sin() är ett klassiskt knep för att förvandla en jämn talföljd 
+  // till vad som ser ut som helt orelaterade nummer.
+     const pseudoRandom = Math.abs(Math.sin(seed) * 10000);
+
+  // 3. Räkna ut ett index och avrunda nedåt till ett heltal
+     const index = Math.floor(pseudoRandom) % STATIONS.length;
+
+  return STATIONS[index];
     }
 
     const TARGET = getDailyStation();
