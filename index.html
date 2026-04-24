@@ -383,7 +383,7 @@ body {
 
       <div class="line-legend" id="lineLegend"></div>
       
-      <div class="info-label">VARJE GISSNING AVSLÖJAR FAKTA OM STATIONEN DU VALDE!</div>
+      <div class="info-label">VARJE GISSNING AVSLÖJAR FAKTA OM STATIONEN DU SKREV!</div>
 
       <div class="hint-legend">
         <div class="hint-chip">LINJE</div>
@@ -393,16 +393,17 @@ body {
       </div>
 
 
-      <div class="color-legend">
-        <span class="color-box color-correct">RÄTT</span>
-        <span class="color-box color-partial">DELVIS RÄTT</span>
-        <span class="color-box color-wrong">FEL</span>
-      </div>
 
       <div class="input-row">
         <input class="station-input" id="stationInput" type="text" placeholder="Skriv en station..." autocomplete="off" />
         <button class="guess-btn" id="guessBtn" onclick="makeGuess()">GISSA</button>
         <div class="autocomplete-list" id="autocomplete" style="display:none"></div>
+      </div>
+
+      <div class="color-legend">
+        <span class="color-box color-correct">RÄTT</span>
+        <span class="color-box color-partial">DELVIS RÄTT</span>
+        <span class="color-box color-wrong">FEL</span>
       </div>
 
       <div class="feedback-msg" id="feedbackMsg"></div>
